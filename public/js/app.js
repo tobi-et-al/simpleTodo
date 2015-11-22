@@ -30,11 +30,4 @@ app.controller('NoteController', function($scope, $location){
    ];
 
 });
-/*
 
-ng-change works
-ng-click
-black up your name
-barny rubble
-belcampo dyke
-*/
