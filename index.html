@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="public/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body ng-app="Todo" class="container">
+  <h2>simple todo </h2>
+  <div id="" ng-controller="NoteController" class="col-xs-7  col-xs-offset-1 ">
+    <blockquote>
+      {{ nowtime | uppercase  }}
+      <div>
+        <table class="table table-striped" ng-model='cart'>
+          <tr ng-repeat="items in cart">
+              <td>{{items.FESTIVAL}}</td>
+              <td>{{items.AMOUNT}}</td>
+              <td><input type='number' min='1' max='5'  ng-model='items.COUNT' value="{{items.COUNT}}"/></td>
+              <td>{{ (items.AMOUNT * items.COUNT)| currency }}</td>
+              <td>
+                <button type="button" class='btn'  ng-click="updateCart($index)" name="button">submit</button>
+              </td>
+          </tr>
+
+            <tr ng-show='uRang'>
+              <form>
+
+                <td> <input type="text" ng-model='entry.FESTIVAL' required name="FESTIVAL" placeholder="FESTIVAL" value="" /> </td>
+                <td> <input type="text" ng-model='entry.AMOUNT'  name="AMOUNT"   placeholder="AMOUNT"  value=""/> </td>
+                <td> <input  type='number' min='1' max='5' ng-model='entry.COUNT' name="COUNT"  placeholder="COUNT" value=""/> </td>
+                <td>{{(entry.AMOUNT * entry.COUNT | currency )}}</td>
+                <td>
+                  <button type="button" class='btn'  ng-click="addToCart()" name="button">submit</button>
+                </td>
+              </form>
+            </tr>
+        </table>
+<hr>
+        <div class="pull-right">
+          <button type="button" class="btn btn-xs btn-primary" name="button" ng-click="uRang=true">Add New Item</button></td>
+        </div>
+      </div>
+    </blockquote>
+
+  </div>
+
+
+</body>
+<script type="text/javascript" src="public/js/angular.min.js" ></script>
+<script type="text/javascript" src="public/js/app.js" ></script>
+</html>
